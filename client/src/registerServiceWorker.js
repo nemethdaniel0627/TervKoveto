@@ -77,6 +77,7 @@ function checkValidServiceWorker(swUrl) {
   fetch(swUrl)
     .then(response => {
       // Ensure service worker exists, and that we really are getting a JS file.
+      console.log(response.headers.get('content-type'));
       if (
         response.status === 404 ||
         response.headers.get('content-type').indexOf('javascript') === -1
