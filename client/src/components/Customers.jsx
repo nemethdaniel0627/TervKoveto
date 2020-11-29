@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+// import { Link, Route, Router, Switch } from "react-router-dom";
 
-function Customers() {  
+function Customers() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [data, setData] = useState([]);
@@ -20,23 +21,40 @@ function Customers() {
   }, []);
 
   if (loading) {
-    return <p>loading..</p>;
+    return <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
   }
 
   if (error !== '') {
     return <p>ERROR: {error}</p>;
-  }  
+  }
+
+  function redirect() {
+    // <Link to="asd"></Link>
+  }
 
   return (
-    <div>
-      <h2>Customers</h2>
-      <ul>
-        {data.map(element =>{
-          return <li key={element.id}>{element.firstName} {element.lastName}</li>
-        })}
-      </ul>
-    </div>
+    // <Router>
+      <div>
+        <h2>Customers</h2>
+        <ul>
+          {data.map(element => {
+            return <li key={element.id}>{element.firstName} {element.lastName}</li>
+          })}
+        </ul>
+        {/* <button><Link to="asd">Katt ide</Link></button> */}
+
+        {/* <Switch>
+          <Route path="asd">
+            <Asd />
+          </Route>
+        </Switch> */}
+      </div>
+    // </Router>
   );
+}
+
+function Asd(){
+  return <h2>Szia</h2>
 }
 
 export default Customers;
