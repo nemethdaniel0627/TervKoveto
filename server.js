@@ -1,7 +1,10 @@
 const express = require('express');
 const mysql = require('mysql');
+const bodyParser = require("body-parser");
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -46,11 +49,32 @@ app.get("/files/:fileID", (req, res) => {
       }
     });
   });
+});
 
-  // const msg = {
-  //   msg: "Msg received, " + req.params.fileID
-  // }
+app.post("/file", (req,res) =>{
+  const name = req.body.name;
+  const id = req.body.id;
+  console.log(name + " " + id);
 
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "tervekdb"
+  });
+  
+  con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    var sql = 'INSERT INTO tervek VALUES ("' + id +'","' + name +'")';
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log("1 record inserted");
+      con.destroy();
+      res.json({msg: true})
+    });
+  });
+  
 });
 
 const port = 5000;

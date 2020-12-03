@@ -5,7 +5,9 @@ import Home from "./components/Home";
 import Nav from "./components/Nav";
 import Tervek from "./components/Tervek";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./styles.css";
+import "./css/main.css";
+import "./css/loading.css";
+
 
 function App() {
   return (

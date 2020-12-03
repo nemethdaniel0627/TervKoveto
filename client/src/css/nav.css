@@ -1,0 +1,22 @@
+nav {
+    background-color: #204d4d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 2rem;
+    font-size: 1.5rem;
+    height: 6rem;
+}
+.nav-link {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 10vw;
+}
+.nav-item {
+    text-decoration: none;
+    color: white;
+}
