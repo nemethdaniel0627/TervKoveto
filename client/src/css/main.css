@@ -24,3 +24,11 @@ body {
   width: 100vw;
   height: calc(100vh - 6rem);
 }
+
+.btn {
+  padding: 1rem;
+  background-color: #ca8709;
+  border: none;
+  border-radius: .5rem;
+  color: #fff;
+}

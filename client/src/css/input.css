@@ -57,5 +57,6 @@ input[type="number"] {
     background-color: white;
     color: #aaa;
     padding: 0 0.5rem;
+    cursor: inherit;
     /* display: none; */
 }

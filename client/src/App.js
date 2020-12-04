@@ -7,6 +7,7 @@ import Tervek from "./components/Tervek";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./css/main.css";
 import "./css/loading.css";
+import "./css/popup.css";
 
 
 function App() {
